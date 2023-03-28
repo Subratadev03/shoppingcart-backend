@@ -45,7 +45,7 @@ exports.login = async (req, res) => {
             });
         }
     }
-    return res.status(200).json({status:false, message: 'Unauthorized' });
+    return res.status(200).json({status:false, message: 'Unauthorized.' });
 }
 
 exports.getUser = async (req, res) => {
