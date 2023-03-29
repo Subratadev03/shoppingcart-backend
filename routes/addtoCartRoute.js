@@ -6,4 +6,5 @@ const AddtoCartController = require('../controllers/addtoCartController')
 
 router.post('/addtocart',AuthGuard, ErrorHandler(AddtoCartController.addtoCart))
 router.get('/getcarts',ErrorHandler(AddtoCartController.getCarts))
+router.get('/user-carts',AuthGuard,ErrorHandler(AddtoCartController.getUsersCart))
 module.exports = router
