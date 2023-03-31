@@ -32,6 +32,7 @@ db.sequelize = sequelize
 db.products =  require('./productModel.js')(sequelize,DataTypes)
 db.user     =  require('./userModel')(sequelize,DataTypes)
 db.addtoCart = require('./addtoCart')(sequelize,DataTypes)
+db.buyProduct = require('./buyProducts')(sequelize,DataTypes)
 
 // db.products.hasMany(db.reviews,{
 //     foreignkey:'product_id',
