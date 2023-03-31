@@ -15,6 +15,9 @@ module.exports = (sequelize, DataTypes) => {
         published:{
             type:DataTypes.STRING,
             // alloNull:false
+        },
+        image:{
+            type:DataTypes.STRING
         }   
 
     },

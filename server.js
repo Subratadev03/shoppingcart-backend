@@ -1,10 +1,15 @@
+require('dotenv').config();
 const express   =   require('express');
 const cors      =   require('cors');
 const bodyParser = require('body-parser')
-require('dotenv').config();
-
+const path  =   require('path')
+const socketio = require('socket.io')
+const http = require('http')
 
 const app       =   express()
+const server = http.createServer(app)
+const io  = socketio(server)
+
 app.use(express.json())   
 
 var coreOptions =   {
@@ -33,9 +38,14 @@ app.use(express.urlencoded({extended:true}))
 //api
 
 app.get('/',(req,res)=>{
-    res.json({message:'Hello world'})
+    res.json({message:'Hello Shopping cart'})
 })
 
+
+
+io.on('connection',(socket)=>{
+    console.log("socket join")
+})
 
 const PORT  = process.env.PORT || 3001
 

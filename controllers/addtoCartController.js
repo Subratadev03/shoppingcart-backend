@@ -9,7 +9,7 @@ exports.addtoCart= async (req,res)=>{
 
     }});
     if(existOrnot) {
-        return res.status(200).json({ message: 'Cart already exists.' });
+        return res.status(200).json({ status:false, message: 'Cart already exists.' });
     }
     const addtocartProduct = await AddtoCart.create({
         user_id:req.user.id,
